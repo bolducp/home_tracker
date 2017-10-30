@@ -1,4 +1,4 @@
-defmodule HomeTrackerWeb.PageControllerTest do
+defmodule HomeTrackerWeb.HomeControllerTest do
   use HomeTrackerWeb.ConnCase
 
   test "GET /", %{conn: conn} do

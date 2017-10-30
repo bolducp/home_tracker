@@ -1,4 +1,4 @@
-defmodule HomeTrackerWeb.PageController do
+defmodule HomeTrackerWeb.HomeController do
   use HomeTrackerWeb, :controller
 
   def index(conn, _params) do
