@@ -1,1 +1,9 @@
-<h2>Login In</2>
+<%= form_for @changeset, session_path(@conn, :create), fn f -> %>
+  <%= label(f, :email) %>
+  <%= text_input(f, :email) %>
+
+  <%= label(f, :password) %>
+  <%= password_input(f, :password) %>
+
+  <%= submit("Submit") %>
+<% end %>

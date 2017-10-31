@@ -107,4 +107,28 @@ defmodule HomeTracker.Accounts do
       user -> {:ok, user}
     end
   end
+
+  @doc """
+  Given either a user struct or an email address and a password,
+  checks if the password is valid for the user.
+  """
+  def check_password(%User{} = user, password) do
+    Comeonin.Bcrypt.check_pass(user, password)
+  end
+  def check_password(email, password) do
+    case Repo.get_by(User, email: email) do
+      nil ->
+        {:error, :user_not_found}
+      user ->
+        check_password(user, password)
+    end
+  end
+
+  @doc """
+  Create a new session token.
+  """
+  def generate_token() do
+    Ecto.UUID.generate()
+  end
+
 end

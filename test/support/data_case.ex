@@ -22,6 +22,7 @@ defmodule HomeTracker.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import HomeTracker.DataCase
+      import HomeTracker.TestHelpers
     end
   end
 

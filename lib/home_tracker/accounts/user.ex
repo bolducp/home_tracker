@@ -38,4 +38,11 @@ defmodule HomeTracker.Accounts.User do
         changeset
     end
   end
+
+  def session_changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:token])
+    |> validate_required([:token])
+    |> unique_constraint(:token)
+  end
 end

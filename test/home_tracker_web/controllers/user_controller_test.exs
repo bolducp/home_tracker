@@ -44,7 +44,7 @@ defmodule HomeTrackerWeb.UserControllerTest do
   end
 
   describe "edit user" do
-    setup [:create_user]
+    setup [:create_user_setup]
 
     test "renders form for editing chosen user", %{conn: conn, user: user} do
       conn = get conn, user_path(conn, :edit, user)
@@ -53,7 +53,7 @@ defmodule HomeTrackerWeb.UserControllerTest do
   end
 
   describe "update user" do
-    setup [:create_user]
+    setup [:create_user_setup]
 
     test "redirects when data is valid", %{conn: conn, user: user} do
       conn = put conn, user_path(conn, :update, user), user: @update_attrs
@@ -70,7 +70,7 @@ defmodule HomeTrackerWeb.UserControllerTest do
   end
 
   describe "delete user" do
-    setup [:create_user]
+    setup [:create_user_setup]
 
     test "deletes chosen user", %{conn: conn, user: user} do
       conn = delete conn, user_path(conn, :delete, user)
@@ -81,7 +81,7 @@ defmodule HomeTrackerWeb.UserControllerTest do
     end
   end
 
-  defp create_user(_) do
+  defp create_user_setup(_) do
     user = fixture(:user)
     {:ok, user: user}
   end

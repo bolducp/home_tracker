@@ -20,6 +20,7 @@ defmodule HomeTrackerWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       import HomeTrackerWeb.Router.Helpers
+      import HomeTracker.TestHelpers
 
       # The default endpoint for testing
       @endpoint HomeTrackerWeb.Endpoint
