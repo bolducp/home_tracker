@@ -43,7 +43,8 @@ defmodule HomeTracker.Mixfile do
       {:cowboy, "~> 1.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:comeonin, "~> 4.0"},
-      {:uuid, "~> 1.1"}
+      {:uuid, "~> 1.1"},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
     ]
   end
 
