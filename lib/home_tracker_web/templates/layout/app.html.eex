@@ -18,8 +18,13 @@
         <div class="nav-wrapper container">
           <a id="logo-container" href="#" class="brand-logo">Logo</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
+            <%= if @conn.assigns[:user] do %>
+              <li>
+                 <li> <%= link "Logout", to: session_path(@conn, :signout) %> </li>
+              </li>
+            <% end %>
           </ul>
+
 
           <ul id="nav-mobile" class="side-nav">
             <li><a href="#">Navbar Link</a></li>

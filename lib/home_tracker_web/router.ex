@@ -23,6 +23,8 @@ defmodule HomeTrackerWeb.Router do
 
   scope "/sessions", HomeTrackerWeb do
     pipe_through [:browser]
+
+    get "/signout", SessionController, :signout
     resources "/", SessionController, only: [:new, :create]
   end
 
