@@ -29,7 +29,11 @@ defmodule HomeTrackerWeb.Router do
   defp authenticate_user(conn, _) do
     case Map.has_key?(conn.assigns, :user) do
       true -> conn
-      false -> conn |> Phoenix.Controller.put_flash(:error, "Login required") |> Phoenix.Controller.redirect(to: "/sessions/new") |> halt()
+      false ->
+        conn
+        |> Phoenix.Controller.put_flash(:error, "Login required")
+        |> Phoenix.Controller.redirect(to: "/sessions/new")
+        |> halt()
     end
   end
 end

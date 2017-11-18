@@ -12,7 +12,7 @@ def create(conn, %{"user" => %{"email" => email, "password" => password}}) do
    case Accounts.create_session(email, password) do
      {:ok, user} ->
        conn
-       |> put_session(:token, user.token)
+       |> put_session(:user_token, user.token)
        |> redirect(to: home_path(conn, :index))
      {:error, _} ->
        changeset = Accounts.new_session()
