@@ -8,40 +8,38 @@
     <meta name="author" content="">
 
     <title>Hello HomeTracker!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Vollkorn+SC" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-      <nav class="amber lighten-3" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">Logo</a>
-          <ul class="right hide-on-med-and-down">
-            <%= if @conn.assigns[:user] do %>
-              <li>
-                 <li> <%= link "Logout", to: session_path(@conn, :signout) %> </li>
-              </li>
-            <% end %>
-          </ul>
-
-
+    <nav class="yellow darken-3" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">HomeTracker</a>
+        <ul class="right hide-on-med-and-down">
+          <%= if @conn.assigns[:user] do %>
+            <li>
+               <li> <%= link "Logout", to: session_path(@conn, :signout) %> </li>
+            </li>
+          <% end %>
+        </ul>
           <ul id="nav-mobile" class="side-nav">
             <li><a href="#">Navbar Link</a></li>
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
-      </nav>
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    </nav>
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
     <div class="container">
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
     </div> <!-- /container -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

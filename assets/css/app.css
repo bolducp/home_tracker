@@ -1,4 +1,32 @@
 /* This file is for your main application css. */
 body {
   margin-top: 0px !important;
+  background: url(/images/home_1.jpg) no-repeat fixed center;
+  background-size: 100%;
+  font-family: 'Alegreya Sans', sans-serif !important;
+}
+
+a, input, label {
+  font-size: 14px !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Vollkorn SC', serif !important;
+}
+
+#sign_in_form {
+  margin-top: 100px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background: url(/images/home_1.jpg) center;
+    background-size: 100%;
+  }
+}
+
+.brand-logo {
+  font-size: 28px !important;
 }
