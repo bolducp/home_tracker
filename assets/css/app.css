@@ -14,10 +14,20 @@ h1, h2, h3, h4 {
   font-family: 'Vollkorn SC', serif !important;
 }
 
-#sign_in_form {
+#sign-in-form {
   margin-top: 100px;
   padding: 50px;
   background: rgba(255, 255, 255, 0.9);
+}
+
+.brand-logo {
+  font-size: 28px !important;
+}
+
+.opaque-container {
+  background-color: #e5e5e5;
+  padding: 5%;
+  margin-top: 10%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -25,8 +35,4 @@ h1, h2, h3, h4 {
     background: url(/images/home_1.jpg) center;
     background-size: 100%;
   }
-}
-
-.brand-logo {
-  font-size: 28px !important;
 }

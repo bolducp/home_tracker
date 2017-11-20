@@ -18,6 +18,7 @@ defmodule HomeTrackerWeb.SessionController do
          changeset = Accounts.new_session()
          conn
          |> put_status(403)
+         |> put_flash(:error, "Incorrect e-mail/password combination")
          |> render("new.html", changeset: changeset)
      end
    end

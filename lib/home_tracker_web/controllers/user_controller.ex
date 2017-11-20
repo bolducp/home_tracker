@@ -19,7 +19,9 @@ defmodule HomeTrackerWeb.UserController do
       {:ok, user} ->
         conn
         |> put_flash(:info, "User created successfully.")
-        |> redirect(to: user_path(conn, :show, user))
+        |> put_session(:user_token, user.token)
+        |> assign(:user, user)
+        |> redirect(to: home_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

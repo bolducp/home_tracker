@@ -18,14 +18,15 @@ defmodule HomeTrackerWeb.Router do
     pipe_through [:browser, :authenticate_user]
 
     get "/", HomeController, :index
-    resources "/users", UserController
+    resources "/users", UserController, except: [:new, :create]
   end
 
   scope "/sessions", HomeTrackerWeb do
     pipe_through [:browser]
 
     get "/signout", SessionController, :signout
-    resources "/", SessionController, only: [:new, :create]
+    resources "/", SessionController, only: [:new, :create], singleton: true
+    resources "/users", UserController, only: [:new, :create]
   end
 
   defp authenticate_user(conn, _) do
